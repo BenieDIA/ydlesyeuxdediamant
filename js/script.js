@@ -46,6 +46,7 @@ const PRODUCTS = [
 ];
 
 
+const CAT_LABEL = {femme:"Femme", homme:"Homme", mixte:"Mixte", soleil:"Solaire"};
 
 const grid = document.getElementById('productGrid');
 function renderProducts(filter){
