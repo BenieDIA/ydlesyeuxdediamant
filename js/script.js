@@ -1,4 +1,4 @@
-﻿const WHATSAPP_NUMBER = "24265284490"; // +242 06 528 44 90
+﻿const WHATSAPP_NUMBER = "242065284490"; // +242 06 528 44 90
 function waLink(message){
   return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
 }
