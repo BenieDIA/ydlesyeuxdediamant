@@ -87,7 +87,7 @@
   }
   .btn-dark{ background:var(--ink); color:var(--paper); }
   .btn-dark:hover, .btn-dark:active{ background:var(--paper); color:var(--ink); }
-  .btn-outline{ background:var(--paper); color:var(--ink); }
+  .btn-outline{ background:var(--ink); color:var(--paper); }
   .btn-outline:hover, .btn-outline:active{ background:var(--ink); color:var(--paper); }
   .btn svg{ width:15px; height:15px; }
 
