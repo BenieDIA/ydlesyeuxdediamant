@@ -61,7 +61,12 @@
   .wa-btn svg{ width:15px; height:15px; flex-shrink:0; }
   .burger{ display:none; background:none; border:none; flex-direction:column; gap:5px; width:24px; }
   .burger span{ height:1px; background:var(--ink); width:100%; display:block; }
-  @media (max-width:900px){ .nav-links{ display:none; } .burger{ display:flex; } }
+  @media (max-width:900px){
+    .nav-links{ display:none; position:absolute; top:76px; left:0; right:0; background:var(--paper); border-bottom:1px solid var(--hair); padding:18px 32px; gap:16px; flex-direction:column; }
+    .nav-links.open{ display:flex; }
+    .nav-links a{ display:block; }
+    .burger{ display:flex; }
+  }
 
   /* ============ hero ============ */
   .hero{ padding:76px 0 56px; background:var(--paper); position:relative; }
@@ -84,6 +89,7 @@
     display:inline-flex; align-items:center; gap:9px;
     padding:15px 26px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; font-weight:600;
     border:1px solid var(--ink); transition:background .1s linear, color .1s linear;
+    flex-wrap:wrap; white-space:normal;
   }
   .btn-dark{ background:var(--ink); color:var(--paper); }
   .btn-dark:hover, .btn-dark:active{ background:var(--paper); color:var(--ink); }
@@ -105,8 +111,10 @@
   @media (max-width:640px){ .section-head .note{ text-align:left; } }
 
   /* ============ collection ============ */
-  .filters{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:42px; }
-  .chip{ border:1px solid var(--ink); padding:9px 18px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:600; background:var(--paper); transition:background .1s linear, color .1s linear; }
+  .filters{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:42px; overflow-x:auto; padding-bottom:8px; }
+  .filters::-webkit-scrollbar{ height:6px; }
+  .filters::-webkit-scrollbar-thumb{ background:var(--hair); border-radius:999px; }
+  .chip{ border:1px solid var(--ink); padding:9px 18px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:600; background:var(--paper); transition:background .1s linear, color .1s linear; white-space:nowrap; }
   .chip.active, .chip:hover{ background:var(--ink); color:var(--paper); }
 
   .product-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--ink); border:1px solid var(--ink); }
@@ -122,9 +130,11 @@
   .product-cat{ font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--graphite); }
   .product-name{ font-family:'Bodoni Moda',serif; font-size:21px; font-weight:600; }
   .product-ref{ font-size:11px; color:var(--graphite); letter-spacing:.04em; }
-  .order-btn{ margin-top:16px; border:1px solid var(--ink); background:var(--paper); padding:10px 14px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:600; display:inline-flex; align-items:center; gap:8px; align-self:flex-start; transition:background .1s linear, color .1s linear; }
+  .order-btn{ margin-top:16px; border:1px solid var(--ink); background:var(--paper); padding:10px 14px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:600; display:inline-flex; align-items:center; gap:8px; align-self:flex-start; transition:background .1s linear, color .1s linear; flex-wrap:wrap; white-space:normal; }
   .order-btn:hover, .order-btn:active{ background:var(--ink); color:var(--paper); }
   .order-btn svg{ width:13px; height:13px; }
+
+  @media (max-width:560px){ .btn, .order-btn{ width:100%; justify-content:center; } }
 
   /* ============ lookbook / mannequins ============ */
   .lookbook{ display:grid; grid-template-columns:repeat(2, 1fr); grid-auto-rows:260px; gap:1px; background:var(--ink); border:1px solid var(--ink); }

@@ -65,6 +65,9 @@ function renderProducts(filter){
       '</div>';
     grid.appendChild(card);
   });
+  if(!grid.classList.contains('in')){
+    grid.classList.add('in');
+  }
 }
 document.querySelectorAll('.chip').forEach(chip => {
   chip.addEventListener('click', () => {
@@ -74,6 +77,15 @@ document.querySelectorAll('.chip').forEach(chip => {
   });
 });
 renderProducts('tous');
+
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
+if(burger && navLinks){
+  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+}
 
 // ---- lookbook mannequins ----
 const lookbook = document.getElementById('lookbookGrid');
